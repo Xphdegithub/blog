@@ -1,0 +1,17 @@
+.center-positon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.center-position--vertical {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+.center--flex(@direction: row) {
+    display: flex;
+    flex-direction: @direction;
+    justify-content: center;
+    align-items: center;
+}
