@@ -15,10 +15,10 @@
 </template>
 
 <script>
-import Layout from '@/components/Layouts';
+import Layout from './components/layout.vue';
 import Header from '@/components/Header';
 import Banner from '@/components/Banner';
-import MainContent from './MainContent.vue';
+import MainContent from './components/MainContent.vue';
 // import IconComp from '@/components/IconComp';
 export default {
   name: 'Home',
