@@ -25,7 +25,8 @@ export default {
     height: 100%;
     box-sizing: border-box;
     padding: 20px;
+    // margin-top: 20px;
     border-radius: 6px;
-    background: cadetblue;
+    background: #fff;
   }
 </style>

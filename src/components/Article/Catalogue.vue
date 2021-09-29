@@ -14,13 +14,13 @@ export default {};
 <style lang="less" scoped>
 @import '~@/assets/less/layout.less';
 .catalogue--wraper {
-  width: 300px;
+  width: 250px;
   margin-left: 15px;
   border-radius: 6px;
   box-sizing: border-box;
   padding: 15px;
-  min-height: 600px;
-  background: blueviolet;
+  // min-height: 600px;
+  background: #fff;
   .center--flex(column);
   justify-content: flex-start;
   .catalogue-item {

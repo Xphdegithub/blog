@@ -39,7 +39,7 @@ export default {
 .article--wraper {
   width: 100%;
   height: 100%;
-  background: #fff;
+  background: #f4f4f4;
   .article-content--container {
     margin-top: 30px;
     // background: brown;

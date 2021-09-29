@@ -33,11 +33,12 @@ export default {
     position: fixed;
     z-index: 999;
     color: #fff;
+    background: #fff;
   }
   .layout-main--wraper {
     width: 1200px;
     flex: 1 0 auto;
-    padding: 30px 24px;
+    padding: 50px 24px;
   }
   .layout-footer--wraper {
     width: 100%;
