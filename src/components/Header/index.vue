@@ -1,5 +1,5 @@
 <template>
-  <div class="header--wraper">
+  <div class="header--wraper" :class="{'scroll--after': isScroll}">
     <div class="header-log--wraper">
       总有人间一两风，填我十万八千梦
     </div>
@@ -32,6 +32,15 @@ import IconComp from '@/components/IconComp'
 export default {
   components: {
     IconComp,
+  },
+  props: {
+    isScroll: {
+      type: Boolean,
+      default: true,
+    }
+  },
+  computed: {
+    
   }
 };
 </script>
@@ -101,6 +110,10 @@ export default {
         }
       }
     }
+  }
+  &.scroll--after {
+    color: #000;
+    background: #fff;
   }
 }
 </style>

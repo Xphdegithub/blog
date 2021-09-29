@@ -2,7 +2,7 @@
   <div class="home--wraper">
     <Layout>
       <template #header>
-        <Header/>
+        <Header :is-scroll='false'/>
       </template>
       <template #banner>
         <Banner/>

@@ -3,6 +3,9 @@
     <div class="content-left--wraper">
       <ArticleItem/>
     </div>
+    <div class="content-right--wraper">
+
+    </div>
   </div>
 </template>
 
@@ -22,9 +25,17 @@ export default {
     height: auto;
     .center--flex();
     justify-content: space-between;
+    align-items: flex-start;
     .content-left--wraper {
-      width: 850px;
+      flex: 1;
       height: auto;
+    }
+    .content-right--wraper {
+      width: 250px;
+      min-height: 500px;
+      margin-left: 15px;
+      border-radius: 6px;
+      background: #fff;
     }
   }
 </style>

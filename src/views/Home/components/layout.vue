@@ -31,7 +31,7 @@ export default {
   justify-content: space-between;
   .layout-header--wraper {
     width: 100%;
-    height: 60px;
+    flex: 0 0 60px;
     position: fixed;
     z-index: 999;
     color: #fff;
@@ -47,7 +47,7 @@ export default {
   }
   .layout-footer--wraper {
     width: 100%;
-    height: 150px;
+    flex: 0 0 150px;
     background: #04060a;
   }
 }
