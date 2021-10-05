@@ -27,6 +27,38 @@ export default {
     Header,
     Banner,
     MainContent,
+  },
+  mounted() {
+    window.addEventListener("scroll", () => {
+      let marginTopDis = document.querySelector('html').scrollTop;
+      let styleArr1 = [
+        {
+          styleName: 'background',
+          styleVal: '#fff',
+        },
+        {
+          styleName: 'color',
+          styleVal: '#000',
+        }
+      ];
+      let styleArr2 = [
+        {
+          styleName: 'background',
+          styleVal: 'transparent',
+        },
+        {
+          styleName: 'color',
+          styleVal: '#fff',
+        }
+      ];
+      if(marginTopDis >= 300) {
+        console.log(this.$bus);
+        this.$bus.$emit('changeHeaderStyle', styleArr1);
+      }
+      if(marginTopDis<= 60) {
+        this.$bus.$emit('changeHeaderStyle', styleArr2);
+      }
+    })
   }
 }
 </script>

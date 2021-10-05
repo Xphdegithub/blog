@@ -1,16 +1,37 @@
 <template>
-  <div class="article-item--wraper">
-    <p class="aricle-item-title">时间不在于你拥有多少，而在于你怎么去使用</p>
-    <p class="article-item-time">2021-9-21</p>
+  <div class="article-item--wraper" v-if="articleData">
+    <p class="aricle-item-title" @click="toArticleDetail">
+      {{ articleData.title }}
+    </p>
+    <p class="article-item-time">{{ articleData.createTime }}</p>
     <p class="article-item-tag--wraper">
-      <span class="tag-item">JavaScript</span>
+      <span class="tag-item" v-for="tagItem in articleData.tags" :key="tagItem.id">{{tagItem.tagName}}</span>
     </p>
   </div>
 </template>
 
 <script>
-export default {
 
+export default {
+  props: {
+    articleData: {
+      type: Object,
+      required: true,
+    }
+  },
+  methods: {
+    toArticleDetail(articleId) {
+      this.$router.push(
+        {
+          name: 'ArticleDetail',
+          params: {
+            id: articleId,
+          }
+        },
+      )
+    }
+  }
+ 
 }
 </script>
 
@@ -26,8 +47,13 @@ export default {
     .center--flex(column);
     justify-content: space-between;
     align-items: flex-start;
+    margin-bottom: 15px;
+    &:nth-last-of-type(1) {
+      margin-bottom: 0;
+    }
     .aricle-item-title {
       font-size: 20px;
+      cursor: pointer;
     }
     .article-item-time {
       color: rgba(0, 0, 0, .6);
@@ -36,11 +62,17 @@ export default {
     .article-item-tag--wraper {
       font-size: 13px;
       color: #fff;
+      .center--flex();
+      justify-content: flex-start;
       .tag-item {
         display: block;
         background: #000;
         padding: 5px 6px;
         border-radius: 4px;
+        margin-right: 15px;
+        &:nth-last-of-type(1) {
+          margin-right: 0;
+        }
       }
     }
   }

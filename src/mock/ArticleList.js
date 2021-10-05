@@ -5,9 +5,13 @@ Mock.mock('/api/article/list', 'get', {
   msg: 'success',
   'data|5-10': [
     {
+      id: '@id',
       title: '@csentence',
       createTime: '@date',
-      'tags|1-3': ['@csentence(3, 5)']
+      'tags|1-3': [{
+        id: '@id',
+        tagName: '@csentence(3, 5)',
+      }]
     }
   ]
 })

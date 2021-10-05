@@ -1,5 +1,5 @@
 <template>
-  <div class="header--wraper" :class="{'scroll--after': isScroll}">
+  <div class="header--wraper" :class="{'scroll--after': isScroll}" ref="header">
     <div class="header-log--wraper">
       总有人间一两风，填我十万八千梦
     </div>
@@ -14,7 +14,7 @@
         <IconComp
           iconName='search'
         />
-        <input type="text" name="" id="" />
+        <input type="text" name="" id="" ref="search"/>
       </div>
       <ul class="header-nav--wraper">
         <li class="nav-item--wraper nav-item--active">首页</li>
@@ -39,8 +39,23 @@ export default {
       default: true,
     }
   },
-  computed: {
-    
+  methods: {
+    changeStyle(styleArr) {
+      console.log(styleArr);
+      if(!Array.isArray(styleArr)) {
+        return;
+      }
+      styleArr.forEach(item => {
+        this.$refs["header"].style[item.styleName] = item.styleVal;
+        if(item.styleName === 'color') {
+          this.$refs["search"].style["border"] = `1px solid ${item.styleVal}`;
+        }
+      });
+    }
+  },
+  mounted() {
+    this.$bus.$on('changeHeaderStyle', this.changeStyle);
+    // this.changeStyle()
   }
 };
 </script>
@@ -49,7 +64,7 @@ export default {
 @import url("~@/assets/less/layout.less");
 .header--wraper {
   width: 100%;
-  height: 100%;
+  height: 60px;
   .center--flex();
   justify-content: space-between;
   background: transparent;
